@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanji Pixel Crossword</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+	  margin: 0;
+	  background-image: url('bgpixels.jpg'); /* Replace with your image path or URL */
+	  background-size: cover; /* or 'contain' */
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  font-family: 'Press Start 2P', cursive;
+	  color: #f8f8f8;
+	  image-rendering: pixelated;
+	}
+
+    h2 {
+      text-align: center;
+      color: #f1c40f;
+      padding: 20px;
+    }
+
+    .kanji-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    .pronounce-btn {
+      background-color: #2ecc71;
+      color: #000;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+      border-radius: 4px;
+    }
+
+    .pronounce-btn:hover {
+      background-color: #27ae60;
+    }
+
+
+    .info-box {
+       background-color: #333;
+        border: 4px solid #f1c40f;
+        border-radius: 10px;
+        padding: 15px;
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .info-box h3 {
+      font-size: 14px;
+      color: #f1c40f;
+    }
+
+    .info-box h2 {
+      font-size: 30px;
+      color: #f1c40f;
+      margin-bottom: 5;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    .info-box p {
+      font-size: 18px;
+      color: #f8f8f8;
+      margin: 0;}
+
+     .info-content {
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+   
+
+    .bottom-box {
+      margin: 20px auto;
+      max-width: 1300px;
+      background-color: #333;
+      border: 4px solid #f1c40f;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .bottom-box h3 {
+      color: #f1c40f;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    audio {
+      display: none;
+    }
+
+    
+    .title {
+      font-size: 24px;
+      background-color: rgb(26, 26, 111);
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 10px;
+      margin: top 0;
+      padding: 10px;
+      position:sticky
+    }
+
+    @media (max-width: 768px) {
+  .kanji-cards {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 cards per row */
+  }
+
+  .info-box {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .info-box h2 {
+    font-size: 24px;
+    word-wrap: break-word;
+  }
+
+  .info-box h3 {
+    font-size: 12px;
+  }
+
+  .info-content {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .bottom-box {
+    padding: 10px;
+  }
+  .kanji-cards > .info-box {
+  box-sizing: border-box;
+}
+}
+
+  </style>
+</head>
+<body>
+  <h2>Kanji Crossword Game</h2>
+
+<div class="kanji-cards">
+  <!-- Entry: 一 -->
+      <div class="info-box">
+      <h3>🧩五</h3>
+      <h2>手</h2>
+      <div class="info-content">
+        <strong>Hint:</strong><br>
+        I am used to write, wave and eat. What am i?<br><br>
+        <strong>Example sentence: </strong> <p>手を あらって ください。</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>🧩七</h3>
+      <h2>母</h2>
+      <div class="info-content">
+        <strong>Hint:</strong><br>
+        I gave birth to you. Who am i?<br><br>
+        <strong>Example sentence: </strong> <p> 母は にほん に います</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>🧩十四 </h3>
+      <h2>人</h2>
+      <h4 style="color:#f1c40f">(ひと/じん/にん)</h4>
+      <div class="info-content">
+        <strong>Hint:</strong><br>
+        I walk on two legs and love to talk. What am I?<br><br>
+        <strong>Example sentence: </strong> <p> あの人は やさしいです</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>🧩八 </h3>
+      <h2>女</h2>
+      <div class="info-content">
+        <strong>Hint:</strong><br>
+        I wear dresses and have long hair—at least in stories! Who am I?<br><br>
+        <strong>Example sentence: </strong> <p> 女の人は せんせい です。</p>
+      </div>
+    </div>
+
+  <!-- Entry: 男 -->
+  <div class="info-box">
+    <h3>🧩十</h3>
+    <h2>男</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I’m the opposite of a lady. Who am I?<br><br>
+      <strong>Example sentence: </strong> <p>男の人は かっこいいです。</p>
+    </div>
+  </div>
+
+
+  <!-- Entry: 父 -->
+  <div class="info-box">
+    <h3>🧩二</h3>
+    <h2>父</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I protect the family and help raise you strong. Who am I?<br><br>
+      <strong>Example sentence: </strong> <p>父は まじめに はたらいています。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 大 -->
+  <div class="info-box">
+    <h3>🧩十三</h3>
+    <h2>大</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I’m larger than most things around me. What word describes me?<br><br>
+      <strong>Example sentence: </strong> <p>大きい いえに すんでいます。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 小 -->
+  <div class="info-box">
+    <h3>🧩九</h3>
+    <h2>小</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I’m tiny and often called cute. I’m the opposite of something big and hard to beat. What am I?<br><br>
+      <strong>Example sentence: </strong> <p>小さい いぬが います。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 目 -->
+  <div class="info-box">
+    <h3>🧩六</h3>
+    <h2>目</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I help you see everything around you. What part of your body am I?<br><br>
+      <strong>Example sentence: </strong> <p>目がかゆいです。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 山 -->
+  <div class="info-box">
+    <h3>🧩十二</h3>
+    <h2>山</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I rise high into the sky and touch the clouds. What am I?<br><br>
+      <strong>Example sentence: </strong> <p>ふじ山は たかいです。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 中 -->
+  <div class="info-box">
+    <h3>🧩三</h3>
+    <h2>中</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I’m not outside or around—I’m right in the middle. Where am I?<br><br>
+      <strong>Example sentence: </strong> <p>かれは れつの 中に います。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 書 -->
+  <div class="info-box">
+    <h3>🧩十一</h3>
+    <h2>書</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I help you send messages and make stories. What action am I?<br><br>
+      <strong>Example sentence: </strong> <p>てがみを 書きます。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 見 -->
+  <div class="info-box">
+    <h3>🧩十五</h3>
+    <h2>見</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      You use me when you watch your favorite shows. What action am I?<br><br>
+      <strong>Example sentence: </strong> <p>とりが 見えます。</p>
+    </div>
+  </div>
+
+  <!-- Entry: 友 -->
+  <div class="info-box">
+    <h3>🧩四</h3>
+    <h2>友</h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I stick with you through thick and thin. I’m someone you can trust. Who am I?<br><br>
+      <strong>Example sentence: </strong> <p>友だちと あそびます。</p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>🧩一</h3>
+    <h2>大学 </h2>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      I’m a place where students learn beyond high school. What am I?<br><br>
+      <strong>Example sentence: </strong> <p>わたしは 大学に かよっています。</p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>🧩三</h3>
+    <h2>月曜日</h2>
+    <p style="color:#f1c40f; font-size:10px;">
+  月 (げつ / getsu) — moon<br>
+  曜 (よう / yō) — weekday<br>
+  日 (にち / nichi) — day / sun
+</p><br>
+    <div class="info-content">
+      <strong>Hint:</strong><br>
+      The week begins with me, and no one likes to get out of bed when I come. What day am I?<br><br>
+      <strong>Example sentence: </strong> <p>きょうは 月曜日です。</p>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Bottom Box -->
+  <div class="bottom-box">
+    <h3>📘 Lesson Notes</h3>
+    <div class="info-content">
+      This crossword reinforces basic Kanji numbers and simple words.<br>
+      <p class="team">Created by: — Awatif, Hanis, Akmar, Aisyah</p>
+    </div>
+  </div>
+
+  <audio id="kanji-audio" src=""></audio>
+
+  <script>
+    function playAudio(file) {
+      const audio = document.getElementById('kanji-audio');
+      audio.src = file;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
